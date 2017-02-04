@@ -1,4 +1,9 @@
-source 'https://rubygems.org'
+# coding: utf-8
+if ENV['RUBY_CHINA_GEM']
+  source 'https://gems.ruby-china.org'
+else
+  source 'http://rubygems.org'
+end
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -6,10 +11,24 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'rspec-rails', '3.5.0'
+gem 'mechanize'
+gem 'rake'
+gem 'mysql2'
+gem 'config'
+
+gem 'grape'
+gem 'grape-jbuilder',      github: 'jimxl/grape-jbuilder'
+gem 'grape_logging',       github: 'aserafin/grape_logging'
+
+gem 'rest-client', github: 'rest-client/rest-client'
+
+gem 'whenever',  require: false
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -38,6 +57,12 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # API文档
+  gem 'grape-swagger'
+  gem 'grape-swagger-rails', github: 'ruby-grape/grape-swagger-rails'
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'faker'
+  gem 'pry'
 end
 
 group :development do
