@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204114844) do
+ActiveRecord::Schema.define(version: 20170207062111) do
 
   create_table "golds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "ca_price",                comment: "内地金价(RMB)"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 20170204114844) do
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "parities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float    "hk_cn",      limit: 24,              comment: "港币-人民币(RMB)"
+    t.float    "cn_hk",      limit: 24,              comment: "人民币-港币(HKD)"
+    t.date     "date"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
 end
