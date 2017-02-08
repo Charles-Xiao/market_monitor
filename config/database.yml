@@ -7,11 +7,11 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  host: localhost
+  host: awsdb.c7za8hlw8aet.ap-southeast-1.rds.amazonaws.com
   port: 3306
   database: monitor
   username: root
-  password: ''
+  password: '19931017xy'
 
 development:
   <<: *default

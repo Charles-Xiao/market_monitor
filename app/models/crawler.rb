@@ -12,7 +12,7 @@ class << self
     page = @agent.get(url)
     hk_price = page.search('table.gold-content-table').search('td.tc\ f-Georgia')[0].text
     ca_price = page.search('table.gold-content-table-inland').search('td.tc\ f-Georgia')[0].text
-    Gold.create!(hk_price: hk_price, ca_price: ca_price, date: Time.now)
+    Gold.find_or_create_by!(hk_price: hk_price, ca_price: ca_price, date: DateTime.now)
   end
 
   def get_parity(url)
@@ -21,7 +21,7 @@ class << self
     text_arr = page.search('div.op_exrate_result').search('div')[0].text.split('=')
     hk_cn = text_arr[1].split('人')[0]
     cn_hk = text_arr[2].split('港')[0]
-    Parity.create!(hk_cn: hk_cn, cn_hk: cn_hk, date: Time.now)
+    Parity.find_or_create_by!(date: DateTime.now).update_attributes(hk_cn: hk_cn, cn_hk: cn_hk)
   end
 
 end
