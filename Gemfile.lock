@@ -184,6 +184,8 @@ GEM
     rack (2.0.1)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-attack (4.4.1)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.1)
@@ -305,6 +307,7 @@ DEPENDENCIES
   mysql2
   pry
   puma (~> 3.0)
+  rack-attack
   rails (~> 5.0.1)
   rake
   rest-client!

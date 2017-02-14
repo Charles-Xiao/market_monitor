@@ -12,6 +12,7 @@ default: &default
   database: monitor
   username: root
   password: '19931017xy'
+  pool: 5
 
 development:
   <<: *default
