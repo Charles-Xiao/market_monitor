@@ -41,6 +41,13 @@ module MarketMonitor
       env['api.tilt.root'] = Rails.root.join 'app', 'views', 'api'
     end
 
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :put, :patch, :delete, :options, :head]
+      end
+    end
+
     # 使用rspec作为默认的测试框架
     config.generators do |g|
       g.test_framework :rspec, {
