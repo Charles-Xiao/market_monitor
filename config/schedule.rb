@@ -23,6 +23,6 @@ set :output, "log/cron_log.log"
 
 job_type :rake,    "cd :path && RAILS_ENV=development bundle exec rake :task --silent :output"
 
-every :day, :at => '8:00am' do
+every :day, :at => '1:00am' do
   rake 'crawler:crawl'
 end

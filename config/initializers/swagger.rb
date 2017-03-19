@@ -1,7 +1,7 @@
 GrapeSwaggerRails.options.url      = '/api/docs/v1'
 GrapeSwaggerRails.options.app_name = '项目文档'
 
-GrapeSwaggerRails.options.app_url = "http://ec2-52-220-140-213.ap-southeast-1.compute.amazonaws.com/"
+GrapeSwaggerRails.options.app_url = "http://ec2-52-220-140-213.ap-southeast-1.compute.amazonaws.com:8080"
 
 # GrapeSwaggerRails.options.before_filter_proc = proc {
   # GrapeSwaggerRails.options.app_url = request.protocol + request.host_with_port
