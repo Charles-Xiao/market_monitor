@@ -7,7 +7,7 @@ class V1::Golds < Grape::API
       optional :id,           type: String, desc: '需要获取用户的id'
     end
     get :prices, jbuilder: 'price.jbuilder' do
-      @price = Gold.first
+      @price = Gold.all
     end
   end
 end
